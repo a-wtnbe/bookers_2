@@ -1,0 +1,29 @@
+<h2>Users</h2>
+<table class="table">
+
+   <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th colspan="3"></th>
+    </tr>
+   </thead>
+
+   <tbody>
+    <% @users.each do |user| %>
+     <div>
+      <%= attachment user profile_image fallback %>
+      <tr>
+        <td>profile_image </tb>
+        <td>user_name : <%=book.user.name %></td>
+        <td><a class= user_id href=/users/id/>Show</a></td>
+      </tr>
+     </div>
+    <% end %>
+   </tbody>
+
+</table>
+  
+ <footer>
+  <p>CopyRight Infratop.inc</p>
+ </footer>

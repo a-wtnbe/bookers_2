@@ -1,0 +1,24 @@
+<topber>
+  <li><a href="/users/id"> Home</a></li>
+  <li><a href="/users"> Users</a></li>
+  <li><a href="/books"> Books</a></li>
+  <li><a rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
+</topber>
+
+</header>
+  <h2>User info</h2>
+  <!--img class="attachment user profile_image fallback" src="/assets/no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg"><table class="table">-->
+  <tbody>
+   <th>name</th>
+	 <th>introduction</th>
+  </tbody>
+
+  <a href="/users/id/edit"></a>
+    <h2>New book</h2>
+    <label for="book_title">Title</label>
+    <input class="form-control book_title" type="text" name="book[title]" id="book_title">
+
+    <label for="book_opinion">Opinion</label>
+    <textarea class="form-control book_body" name="book[body]" id="book_body"></textarea>
+
+    <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">

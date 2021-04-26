@@ -1,0 +1,26 @@
+<%= render 'books/new', books: @books %>
+<%= flash[:notice] %>
+
+<p>Title: <%= @book.title %></p>
+<p>Opinion: <%= @book.opinion %></p>
+<%= link_to "Edit", edit_book_path(@book.id) %> | <%= link_to"Back", books_path %>
+
+
+<h2>Book detail</h2>
+ <table class="table">
+   <tbody>
+     <tr>
+       <td><a href="/users/od">
+         <!--img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg"><br>-->
+         <!--投稿者のユーザーネームlink--></a>
+       </td>
+        <td><a href="/books/id"></a></td>
+        <td><a class="btn btn-sm btn-success edit_book_id" href="/books/id/edit">Edit</a></td>
+        <td><a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger destroy_book_id" rel="nofollow" data-method="delete" href="/books/id">Destroy</a></td>
+     </tr>
+   </tbody>
+ </table>
+
+ <footer>
+  <p>CopyRight Infratop.inc</p>
+ </footer>
