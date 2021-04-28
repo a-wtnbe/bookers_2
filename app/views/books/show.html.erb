@@ -23,7 +23,7 @@
     <% end %>
    <% end %>
 
-   <%= form_with model: @book, local:true do |f| %>
+   <%= form_with model: @newbook, local:true do |f| %>
     <label for="book_title">Title</label>
     <input class="form-control book_title" type="text" name="book[title]" id="book_title">
     <label for="book_opinion">Opinion</label>
@@ -34,19 +34,25 @@
 <%= flash[:notice] %>
 
 <h2>Book detail</h2>
- <table class="table">
    <tbody>
      <tr>
-       <td><a href="/users/od">
-         <img class="attachment user profile_image fallback" ><br>
-         <!--投稿者のユーザーネームlink--></a>
-       </td>
+        <td><%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpg', fallback: "no_image.jpg" %></td>
+        <td><%= link_to user_path(@user.id) do %>
+            <%= @user.name %>
+            <% end %>
+        </td>
+        <td><%= link_to book_path(@book.id) do %>
+          <%= @book.title %>
+          <% end %>
+        </td>
+        <td><%= @book.body %></td>
+      </tr>
+      <tr>
         <td><a href="/books/id"></a></td>
-        <td><a class="btn btn-sm btn-success edit_book_id" href="/books/id/edit">Edit</a></td>
-        <td><a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger destroy_book_id" rel="nofollow" data-method="delete" href="/books/id">Destroy</a></td>
-     </tr>
+        <td><%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success" %></td>
+        <td><%= link_to "Destroy", book_path(@book.id), method: :delete, data:{ confirm: "本当に消しますか？"},class: "btn btn-sm btn-danger" %></td>
+      </tr>
    </tbody>
- </table>
 
  <footer>
   <p>CopyRight Infratop.inc</p>

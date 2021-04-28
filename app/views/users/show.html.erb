@@ -1,10 +1,10 @@
 <!--%= render 'books/new', books: @books %>-->
 
-<table>
   <h2>User info</h2>
   <img class="attachment user profile_image fallback"><table class="table">
    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
 
+<table class="table table-hover table-inverse">
   <tr>
    <th>name</th>
    <th><%= @user.name %></th>
@@ -15,6 +15,8 @@
   </tr>
 </table>
 
+<%= link_to '', edit_user_path(@user),class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
+
   <h1>New book</h1>
 　 <% if @book.errors.any? %>
     <%= @book.errors.count %>errors prohibited this obj from being saved:
@@ -24,11 +26,12 @@
    <% end %>
 
    <%= form_with model: @book, local:true do |f| %>
-    <label for="book_title">Title</label>
-    <input class="form-control book_title" type="text" name="book[title]" id="book_title">
-    <label for="book_opinion">Opinion</label>
-    <textarea class="form-control book_body" name="book[body]" id="book_body"></textarea>
-    <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+    <h4>Opinion</h4>
+    <%= f.text_area :body %>
+    <%= f.submit "Create Book", class: "btn btn-success" %>
+
    <% end %>
 <h2>Books</h2>
  <table class="table table-hover table-inverse">
@@ -41,6 +44,21 @@
   </thead>
  </table>
 
+
+   <tbody>
+    <% @users.each do |user| %>
+     <div>
+      <tr>
+        <td><%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpg', fallback: "no_image.jpg" %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to "show", user_path(user.id)  %>
+        </td>
+      </tr>
+     </div>
+    <% end %>
+   </tbody>
+
  <footer>
   <p>CopyRight Infratop.inc</p>
  </footer>
+

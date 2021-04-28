@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     @books = Book.all
     @user = User.find(params[:id])
     @book = Book.new
+    @users = User.all
   end
 
   def templ
