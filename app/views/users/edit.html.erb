@@ -1,3 +1,8 @@
+<% @user.errors.full_messages.each do |message| %>
+  <div class="form-error">
+     <%= message %>
+  </div>
+<% end %>
 <h2>User info</h2>
 <%= form_with model:@user, local:true do |f| %>
   <p>Name</p>
@@ -6,7 +11,7 @@
    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
   <p>Introduction</p>
   <%= f.text_area :introduction %>
-  <%= f.submit "Update User" %>
+  <%= f.submit "Update User", class: "btn btn-secondary" %>
 <% end %>
 
 <footer>

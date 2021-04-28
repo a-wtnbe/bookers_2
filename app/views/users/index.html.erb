@@ -1,8 +1,12 @@
-<table>
+
+<div class="container">
+ <div class="row">
+  <div class="col-md-3">
   <h2>User info</h2>
   <img class="attachment user profile_image fallback"><table class="table">
    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
 
+<table class="table table-hover table-inverse">
   <tr>
    <th>name</th>
    <th><%= @user.name %></th>
@@ -13,6 +17,9 @@
   </tr>
 </table>
 
+<%= link_to '', edit_user_path(@user),class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
+
+
   <a href="/users/id/edit"></a>
     <h2>New book</h2>
     <label for="book_title">Title</label>
@@ -22,7 +29,9 @@
     <textarea class="form-control book_body" name="book[body]" id="book_body"></textarea>
 
     <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
+</div>
 
+<div class="col-md-8">
 <h2>Users</h2>
 <table class="table">
 
@@ -46,6 +55,9 @@
      </div>
     <% end %>
    </tbody>
+   </div>
+   </div>
+   </div>
 
 </table>
 
