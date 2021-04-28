@@ -10,6 +10,6 @@ class User < ApplicationRecord
     # length: { minimum: 1, maximum: 50 }
 
 
-  has_many :book, dependent: :destroy
+  has_many :books, dependent: :destroy
  attachment :profile_image,destroy: false
 end

@@ -1,5 +1,8 @@
 <!--%= render 'books/new', books: @books %>-->
 
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3">
   <h2>User info</h2>
   <img class="attachment user profile_image fallback"><table class="table">
    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
@@ -17,6 +20,10 @@
 
 <%= link_to '', edit_user_path(@user),class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
 
+
+
+
+
   <h1>New book</h1>
 　 <% if @book.errors.any? %>
     <%= @book.errors.count %>errors prohibited this obj from being saved:
@@ -33,6 +40,10 @@
     <%= f.submit "Create Book", class: "btn btn-success" %>
 
    <% end %>
+
+   </div>
+
+<div class="col-sm">
 <h2>Books</h2>
  <table class="table table-hover table-inverse">
   <thead>
@@ -44,19 +55,20 @@
   </thead>
  </table>
 
-
    <tbody>
-    <% @users.each do |user| %>
+    <% @books.each do |book| %>
      <div>
       <tr>
-        <td><%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpg', fallback: "no_image.jpg" %></td>
-        <td><%= user.name %></td>
-        <td><%= link_to "show", user_path(user.id)  %>
-        </td>
+        <td><%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpg', fallback: "no_image.jpg" %></td>
+        <td><%= link_to book.title, book_path(book) %></td>
+        <td><%= book.body %></td>
       </tr>
      </div>
     <% end %>
    </tbody>
+</div>
+</div>
+</div>
 
  <footer>
   <p>CopyRight Infratop.inc</p>
