@@ -10,10 +10,9 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
+    if @user.update(user_params)
     redirect_to user_path(@user.id)
-    if current_user.update(user_params)
-      redirect_to user_path(current_user)
+    # 他人の情報を編集できない処理
     else
       render :edit
     end
