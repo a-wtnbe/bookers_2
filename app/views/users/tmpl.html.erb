@@ -1,17 +1,13 @@
-<topber>
-  <li><a href="/users/id"> Home</a></li>
-  <li><a href="/users"> Users</a></li>
-  <li><a href="/books"> Books</a></li>
-  <li><a rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
-</topber>
 
-</header>
+
   <h2>User info</h2>
   <img class="attachment user profile_image fallback"><table class="table">
-  <tbody>
-   <th>name</th>
-	 <th>introduction</th>
-  </tbody>
+  <!--<tbody>-->
+   <p>name：<%= user.name %></p>
+   <p>introduction: <%= user.introduction %></p>
+  <!-- <th>name</th>-->
+	 <!--<th>introduction</th>-->
+  <!--</tbody>-->
 
   <a href="/users/id/edit"></a>
     <h2>New book</h2>
