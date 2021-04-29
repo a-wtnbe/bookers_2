@@ -1,5 +1,7 @@
 <!--%= render 'books/new', books: @books %>-->
-
+<div class="container">
+ <div class="row">
+  <div class="col-md-3">
 <table>
   <h2>User info</h2>
   <img class="attachment user profile_image fallback"><table class="table">
@@ -33,9 +35,11 @@
     <%= f.submit "Create Book", class: "btn btn-success" %>
 
    <% end %>
+   </div>
 
-<%= flash[:notice] %>
 
+
+<div class="col-md-8 offset-md-1">
 <h2>Book detail</h2>
    <tbody>
      <tr>
@@ -59,6 +63,10 @@
       <% end %>
       </tr>
    </tbody>
+   </div>
+    </div>
+     </div>
+
 
  <footer>
   <p>CopyRight Infratop.inc</p>
