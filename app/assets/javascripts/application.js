@@ -21,3 +21,5 @@
 
 //= require jquery
 //= require jquery_ujs
+
+// require("@fortawesome/fosntawesome-free/js/all")
